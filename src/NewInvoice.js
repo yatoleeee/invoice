@@ -10,7 +10,6 @@ import './NewInvoice.css'
 
 function NewInvoice() {
   const navigate = useNavigate();
-  // console.log(state, id)
   const [data, setData] = React.useState(null)
   const [from, setFrom] = React.useState('')
   const [to, setTo] = React.useState('')
@@ -78,14 +77,7 @@ function NewInvoice() {
   return (
     <div className="mt-5 pt-3">
       <div className="invoice-form-wrapper">
-        {/* {details && JSON.stringify(details)} */}
         <Form>
-          {/* <Row className="mb-3">
-            <Form.Group as={Col} className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Invoice Number</Form.Label>
-              <Form.Control readOnly type="text" placeholder="Enter company name" value={id}/>
-            </Form.Group>
-          </Row> */}
 
           <Row className="mb-3">
             <Form.Group as={Col} className="mb-3" controlId="formBasicFrom">

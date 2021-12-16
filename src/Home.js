@@ -34,7 +34,6 @@ function Home() {
     setLoading(true)
     axios.get(`https://protective-tidy-vessel.glitch.me/invoices`)
     .then((res) => {
-      console.log('wait')
       setDbData(res.data)
       setLoaded(true)
     })
@@ -71,7 +70,6 @@ function Table({tableData, refreshData}) {
 
   const data = React.useMemo(
     () => ([...tableData]),
-    // getData(),
     [tableData]
   )
 
@@ -80,7 +78,6 @@ function Table({tableData, refreshData}) {
       {
         Header: 'No',
         accessor: (row, rowIndex) => {
-          console.log('rowwwww', row)
           return (rowIndex + 1)
         },
         disableFilters: true,
@@ -111,7 +108,6 @@ function Table({tableData, refreshData}) {
         disableFilters: true,
         disableSortBy: true,
         accessor: (row, rowIndex) => {
-          console.log('row', row)
           return (
             <div>
               <Button variant="primary" onClick={() => {
@@ -329,15 +325,12 @@ function Table({tableData, refreshData}) {
             ))}
           </select>
         </div>
-        <table {...getTableProps()}
-          // style={{ border: 'solid 1px black' }}
-        >
+        <table {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
                   <th
-                    // {...column.getHeaderProps(column.getSortByToggleProps())}
                     {
                       ...column.getHeaderProps({
                         className: column.collapsed ? 'collapsed' : '',
@@ -345,7 +338,6 @@ function Table({tableData, refreshData}) {
                     }
                     style={{
                       border: 'solid 1px black',
-                      // background: 'aliceblue',
                       color: 'black',
                       fontWeight: 'bold',
                     }}
@@ -382,7 +374,6 @@ function Table({tableData, refreshData}) {
                         style={{
                           padding: '5px',
                           border: 'solid 1px black',
-                          // background: 'papayawhip',
                         }}
                       >
                         {cell.render('Cell')}

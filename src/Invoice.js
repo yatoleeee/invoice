@@ -11,7 +11,6 @@ import './Invoice.css'
 function Invoice() {
   const {state} = useLocation();
   const {id} = state;
-  // console.log(state, id)
   const [data, setData] = React.useState(null)
   const [from, setFrom] = React.useState('')
   const [to, setTo] = React.useState('')
@@ -26,12 +25,9 @@ function Invoice() {
     setLoading(true)
     axios.get(`https://protective-tidy-vessel.glitch.me/invoice/${id}`)
     .then((res) => {
-      console.log('ress', res)
       setData(res.data[0])
       setFrom(res.data[0].from)
       setTo(res.data[0].to)
-      // setInvoiceDate(moment(res.data[0].invoiceDate).format('DD/MM/YYYY'))
-      // setDueDate(moment(res.data[0].dueDate).format('DD/MM/YYYY'))
       setInvoiceDate(new Date(res.data[0].invoiceDate))
       setDueDate(new Date(res.data[0].dueDate))
       setDetails(JSON.parse(res.data[0].details))
@@ -75,7 +71,6 @@ function Invoice() {
         dueDate,
         details: JSON.stringify(details),
       }).then((res) => {
-        console.log('put res ', res)
         alert('Update Invoice Success')
       }).catch(err => console.log('Error: ', err))
       .finally(() => setLoading(false))
