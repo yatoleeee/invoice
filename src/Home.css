@@ -1,0 +1,67 @@
+.home-table-container {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.home-table-wrapper {
+  display: block;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border-bottom: 1px solid black;
+}
+
+.home-table-container table {
+  /* Make sure the inner table is always as wide as needed */
+  width: 100%;
+  border-spacing: 0;
+}
+
+.home-table-container tr:last-child td {
+  border-bottom: 0;
+}
+
+.home-table-container th,
+.home-table-container td {
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+
+  /* The secret sauce */
+  /* Each cell should grow equally */
+  width: 1%;
+  /* But "collapsed" cells should be as small as possible */
+}
+
+.home-table-container th.collapsed {
+  width: 0.0000000001%;
+}
+
+.home-table-container th:last-child {
+  border-right: 0;
+}
+
+.home-table-container td.collapsed {
+  width: 0.0000000001%;
+}
+
+.home-table-container td:last-child {
+  border-right: 0;
+}
+
+.home-table-container .pagination {
+  padding: 0.5rem;
+}
+
+.home-table-container .react-datepicker-wrapper, .home-table-container .react-datepicker__input-container, .home-table-container .react-datepicker__input-container input {
+  width: 100px;
+}
+
+.home-add-button-container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: right;
+}

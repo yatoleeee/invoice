@@ -1,0 +1,1 @@
+[{"id":1,"from":"PT Berdikari","to":"GHO Ltd.","invDate":"2021-12-15","dueDate":"2022-01-15"},{"id":2,"from":"PT Berdikari","to":"GHO Ltd.","invDate":"2021-12-18","dueDate":"2022-01-18"},{"id":3,"from":"PT Berdikari","to":"GHO Ltd.","invDate":"2021-12-15","dueDate":"2022-01-15"}]
